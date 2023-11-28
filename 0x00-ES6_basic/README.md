@@ -27,3 +27,5 @@
 | 10. For...of Loops | [10-loops.js](./10-loops.js) |
 | 11. Iterator | [11-createEmployeesObject.js](./11-createEmployeesObject.js) |
 | 12. Let's create a report object | [12-createReportObject.js](./12-createReportObject.js) |
+| 13. Iterating through report objects | [100-createIteratorObject.js](./100-createIteratorObject.js) |
+| 14. Iterate through object | [101-iterateThroughObject.js](./101-iterateThroughObject.js) |
