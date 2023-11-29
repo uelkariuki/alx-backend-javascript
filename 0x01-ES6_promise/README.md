@@ -23,3 +23,4 @@
 | 7. Load balancer | [7-load_balancer.js](./7-load_balancer.js) |
 | 8. Throw error / try catch | [8-try.js](./8-try.js) |
 | 9. Throw an error | [9-try.js](./9-try.js) |
+| 10. Await / Async | [100-await.js](./100-await.js) |
