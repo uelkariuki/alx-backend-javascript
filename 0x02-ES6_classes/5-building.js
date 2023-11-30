@@ -1,6 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 export default class Building {
   constructor(sqft) {
+    if (typeof sqft !== 'number') {
+      throw new Error('sqrt must be a number');
+    }
     this._sqft = sqft;
   }
 
