@@ -5,14 +5,17 @@ export default class Building {
       throw new Error('sqrt must be a number');
     }
     this._sqft = sqft;
+
+    if (this.constructor !== Building && typeof this.evacuationWarningMessage !== 'function') {
+      throw new Error('Class extending Building must override evacuationWarningMessage');
+    }
   }
 
   get sqft() {
     return this._sqft;
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  evacuationWarningMessage() {
-    throw new Error('Class extending Building must override evacuationWarningMessage');
+  set sqrt(sqrt) {
+    this._sqft = sqrt;
   }
 }
