@@ -21,3 +21,4 @@
 | 8. Primitive - Holberton Class | [8-hbtn_class.js](./8-hbtn_class.js) |
 | 9. Hoisting | [9-hoisting.js](./9-hoisting.js) |
 | 10. Vroom | [10-car.js](./10-car.js) |
+| 11. EVCar | [100-evcar.js](./100-evcar.js) |
