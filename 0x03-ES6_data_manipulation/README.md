@@ -24,3 +24,4 @@
 | 8. Clean set | [8-clean_set.js](./8-clean_set.js) |
 | 9. Map data structure | [9-groceries_list.js](./9-groceries_list.js) |
 | 10. More map data structure | [10-update_uniq_items.js](./10-update_uniq_items.js) |
+| 11. Weak link data structure | [100-weak.js](./100-weak.js) |
