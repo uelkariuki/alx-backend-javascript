@@ -1,11 +1,13 @@
 export default function cleanSet(set, startString) {
-  if (!(set instanceof Set) || typeof startString !== 'string') {
-    throw new Error('Wrong datatype');
-  }
-  if (startString === '') {
+  if (
+    !set
+    || !(set instanceof Set)
+    || typeof startString !== 'string'
+    || !startString
+  ) {
     return '';
   }
-  return [...set]
+  return Array.from(set)
     .filter((item) => item.startsWith(startString))
     .map((item) => item.slice(startString.length))
     .join('-');
