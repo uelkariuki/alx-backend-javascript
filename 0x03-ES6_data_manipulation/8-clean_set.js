@@ -1,4 +1,7 @@
 export default function cleanSet(set, startString) {
+  if (!(set instanceof Set) || typeof startString !== 'string') {
+    throw new Error('Wrong datatype');
+  }
   if (startString === '') {
     return '';
   }
