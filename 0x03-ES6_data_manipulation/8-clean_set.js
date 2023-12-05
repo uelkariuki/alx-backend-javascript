@@ -8,7 +8,7 @@ export default function cleanSet(set, startString) {
     return '';
   }
   return Array.from(set)
-    .filter((item) => item.startsWith(startString))
+    .filter((item) => typeof item === 'string' && item.startsWith(startString))
     .map((item) => item.substring(startString.length))
     .filter(Boolean)
     .join('-');
