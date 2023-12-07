@@ -38,7 +38,9 @@ class Teacher implements TeacherInterface {
   }
 }
 
-function createEmployee(salary: number | string): Director | Teacher {
+function createEmployee(
+  salary: number | string
+): DirectorInterface | TeacherInterface {
   if (typeof salary === 'number' && salary < 500) {
     return new Teacher();
   }
@@ -50,18 +52,34 @@ function createEmployee(salary: number | string): Director | Teacher {
 
 // console.log(createEmployee('$500'));
 
-function isDirector(employee: Director | Teacher): employee is Director {
-  return employee instanceof Director;
+function isDirector(
+  employee: DirectorInterface | TeacherInterface
+): employee is DirectorInterface {
+  return (employee as DirectorInterface).workDirectorTasks != undefined;
 }
-function executeWork(employee: Director | Teacher): string {
+function executeWork(employee: DirectorInterface | TeacherInterface): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
   } else {
-	return employee.workTeacherTasks();
+    return employee.workTeacherTasks();
   }
 }
-
-executeWork(createEmployee(200));
+//console.log(executeWork(createEmployee(200)));
 //Getting to work
-executeWork(createEmployee(1000));
+//console.log(executeWork(createEmployee(1000)));
 //Getting to director tasks
+
+type Subjects = 'Math' | 'History';
+
+function teachClass(todayClass: Subjects) {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  }
+  if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+}
+//console.log(teachClass('Math'));
+//Teaching Math
+//console.log(teachClass('History'));
+//Teaching History

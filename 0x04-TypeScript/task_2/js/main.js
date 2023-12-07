@@ -39,17 +39,25 @@ function createEmployee(salary) {
 // console.log(createEmployee(1000));
 // console.log(createEmployee('$500'));
 function isDirector(employee) {
-    employee instanceof Director;
+    return employee.workDirectorTasks != undefined;
 }
 function executeWork(employee) {
     if (isDirector(employee)) {
-        employee.workDirectorTasks();
+        return employee.workDirectorTasks();
     }
     else {
-        employee.workTeacherTasks();
+        return employee.workTeacherTasks();
     }
 }
-executeWork(createEmployee(200));
-//Getting to work
-executeWork(createEmployee(1000));
-//Getting to director tasks
+function teachClass(todayClass) {
+    if (todayClass === 'Math') {
+        return 'Teaching Math';
+    }
+    if (todayClass === 'History') {
+        return 'Teaching History';
+    }
+}
+console.log(teachClass('Math'));
+//Teaching Math
+console.log(teachClass('History'));
+//Teaching History
