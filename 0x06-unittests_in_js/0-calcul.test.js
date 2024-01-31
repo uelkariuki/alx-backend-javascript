@@ -14,5 +14,8 @@ describe("calculateNumber", function() {
   it('checks if calculateNumber returns the sum of different floating point no. a and floating point no. b', function () {
     assert.equal(calculateNumber(1.5, 3.7), 6);
   });
+  it('checks if calculateNumber returns the sum of negative a and b', function () {
+    assert.equal(calculateNumber(-1.5, -3.7), -5);
+  });
 
 });
