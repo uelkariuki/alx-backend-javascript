@@ -5,17 +5,18 @@
 
 const sendPaymentRequestToApi = require('./3-payment');
 const chai = require('chai');
-const { utils } = require('mocha');
+const Utils = require('./utils');
 const sinon = require('sinon');
 const expect = chai.expect;
 
 describe('sendPaymentRequestToApi', function () {
   it('should handle Utils function well', function () {
-	let endPaymentRequestToApiSpy= sinon.spy(utils, 'endPaymentRequestToApi');
-	utils.calculateNumber('SUM', 100, 20);
-	// console.log(utils.calculateNumber);
-	expect(utils.calculateNumber.calledOnce).to.be.Arguments(true);
-	endPaymentRequestToApiSpy.restore();
-
+    let endPaymentRequestToApiSpy = sinon.spy(Utils, 'endPaymentRequestToApi');
+    sendPaymentRequestToApi(100, 20);
+    // console.log(utils.calculateNumber);
+    expect(
+      endPaymentRequestToApiSpy.calledOnceWithExactly('SUM', 100, 20)
+    ).to.be.true;
+    endPaymentRequestToApiSpy.restore();
   });
 });
