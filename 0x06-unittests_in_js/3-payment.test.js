@@ -11,7 +11,7 @@ const expect = chai.expect;
 
 describe('sendPaymentRequestToApi', function () {
   it('should handle Utils function well', function () {
-    let endPaymentRequestToApiSpy = sinon.spy(Utils, 'endPaymentRequestToApi');
+    let endPaymentRequestToApiSpy = sinon.spy(Utils, 'calculateNumber');
     sendPaymentRequestToApi(100, 20);
     expect(endPaymentRequestToApiSpy.calledOnce).to.be.true;
     expect(
