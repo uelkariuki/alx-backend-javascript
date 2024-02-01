@@ -13,10 +13,11 @@ describe('sendPaymentRequestToApi', function () {
   it('should handle Utils function well', function () {
     let endPaymentRequestToApiSpy = sinon.spy(Utils, 'endPaymentRequestToApi');
     sendPaymentRequestToApi(100, 20);
-    // console.log(utils.calculateNumber);
+    expect(endPaymentRequestToApiSpy.calledOnce).to.be.true;
     expect(
-      endPaymentRequestToApiSpy.calledOnceWithExactly('SUM', 100, 20)
+      endPaymentRequestToApiSpy.calledWith('SUM', 100, 20)
     ).to.be.true;
+
     endPaymentRequestToApiSpy.restore();
   });
 });
